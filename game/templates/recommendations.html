@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommended Games</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container Styles */
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        h1 {
+            color: #333;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333
+        color: #fff; /* Text color */
+        text-decoration: none;
+        margin: 3px 0px
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+        .btn:hover {
+        background-color: #000
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Game Recommend</h1>
+        <table>
+            <tr>
+                <th>Game Title</th>
+            </tr>
+            {% for game in recommended_games %}
+                <tr>
+                    <td>{{ game }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="/" role="button" class="btn">Home</a>
+    </div>
+</body>
+</html>

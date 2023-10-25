@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Recommendation</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container Styles */
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Black Box Styles for Heading */
+        .black-box {
+            background-color: black;
+            color: white; /* Changed text color to white */
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Header Styles */
+        h1 {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        /* Form Styles */
+        form {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker Green */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="black-box">
+            <h1>Game Recommendation</h1>
+        </div>
+        <form method="post" action="{% url 'recommend_games' %}">
+            {% csrf_token %}
+            <label for="genres">Enter the genre:</label>
+            <input type="text" id="genres" name="genres" required>
+            <input type="submit" value="Recommend Games">
+        </form>
+    </div>
+</body>
+</html>
